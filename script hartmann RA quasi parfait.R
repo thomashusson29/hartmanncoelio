@@ -2867,3 +2867,28 @@ df_survie_hartmann_coelio <- df_survie %>%
 print(df_survie_hartmann_coelio)
 
 df_survie_hartmann_coelio
+
+
+
+
+
+
+# Aller dans le dossier Git
+setwd("/Users/thomashusson/Documents/R/R Hartmann/Hartmann Coelio")
+
+# Nom du fichier à pusher (déjà connu)
+fichier <- "script hartmann RA quasi parfait.R"
+
+# Vérifier que le fichier existe
+if (!file.exists(fichier)) {
+  stop("❌ Le fichier spécifié est introuvable.")
+}
+
+# Message de commit (tu peux modifier ici)
+message_commit <- "Mise à jour du script Hartmann RA quasi parfait"
+
+# Ajouter, committer, pusher
+system(paste("git add", shQuote(fichier)))
+system(paste("git commit -m", shQuote(message_commit)))
+system("git push")
+

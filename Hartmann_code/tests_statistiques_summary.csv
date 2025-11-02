@@ -1,0 +1,4 @@
+"Comparaison","Test_Taux","p_Taux","Test_Delai","p_Delai"
+"RA vs Hartmann Non Converti","McNemar","0.0389","Wilcoxon signed rank","0.3811"
+"RA vs Hartmann Converti","McNemar","0.0067","Wilcoxon signed rank","0.1257"
+"Hartmann Converti vs Non Converti","Fisher","0.1338","Mann-Whitney","0.4985"

@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+# Fichiers ignorés automatiquement (>20 Mo)
+.RData

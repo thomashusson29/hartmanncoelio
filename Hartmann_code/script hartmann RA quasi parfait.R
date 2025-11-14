@@ -1,7 +1,7 @@
-#tout supprimer
+## %% ---- tout supprimer ----
 rm(list=ls())
 
-# Installation des packages necessaires
+# %% --- Installation des packages necessaires --- 
 install.packages(c(
   "cardx", "dplyr", "readxl", "openxlsx", "tidyverse", "gtsummary", 
   "magrittr", "ggplot2", "lubridate", "ggpubr", "survival", 
@@ -9,7 +9,7 @@ install.packages(c(
   "officer", "flextable", "gt", "mice", "googlesheets4", 
   "RItools", "epiR", "tableone", "cobalt", "broom", "forcats", "dlstats", "pkgsearch", "pROC", "stats", "ResourceSelection", "forestplot"))
 
-# Chargement des librairies
+# %% --- Chargement des librairies --- 
 library(forcats)
 library(cardx)
 library(tidyverse)
@@ -42,12 +42,15 @@ library(stats)
 library(ResourceSelection)
 library(forestplot)
 
-# etape 1 : Importer toute la base
+## %% ---- etape 1 : Importer toute la base ---
+gs4_deauth()
+
 df <- read_sheet(
   "https://docs.google.com/spreadsheets/d/1PrWmbpaXgLFLBJ8eGCTdcPI0qEJhmxr6mXe4wylyQtY/edit?gid=531779098#gid=531779098",
   sheet = "base_filtrée_péritonites",
 )
 
+## %% ---- Definition des colonnes à inclure dans le tableau 1 ----
 cols_to_include_in_table1 <- c(
   "Age",
   "Sexe_Male",
@@ -168,7 +171,7 @@ cols_to_include_in_table4 <- c(
   "S_etatDDN_vivant"
 )
 
-#***************Premier niveau : Hartmann coelio vs Colorectale laparo*****************#
+## %% ---- Premier niveau : Hartmann coelio vs Colorectale laparo ----
 
 # Filtrer les patients avec une valeur renseignee pour 'I_geste_comparaison_1HartmannCoelio'
 # et uniquement ceux operes en urgence (I_urgence == 1)
@@ -192,10 +195,6 @@ table1unadjusted <- df_HartmannCoelio %>%
 
 # Affichage du tableau
 table1unadjusted
-
-
-library(gtsummary)
-library(dplyr)
 
 # On identifie les variables binaires (supposées être en 0/1)
 vars_binaires <- cols_to_include_in_table1[df_HartmannCoelio %>%
@@ -226,11 +225,12 @@ table1unadjusted
 
 
 # Convertir le tableau en objet gt
-table1unadjusted_gt <- as_gt(table1unadjusted)
+#table1unadjusted_gt <- as_gt(table1unadjusted)
 
 # Enregistrer le tableau au format Word
-gtsave(table1unadjusted_gt , file = "table1unadjusted.docx")
+#gtsave(table1unadjusted_gt , file = "table1unadjusted.docx")
 
+## %% --- Tableau 2 : résultats per-opératoires ----
 
 
 table2unadjusted <- df_HartmannCoelio %>%
@@ -258,6 +258,8 @@ gtsave(table2unadjusted_gt , file = "table2unadjusted.docx")
 
 
 
+## %% ---- Tableau 3 : résultats post-opératoires précoces ----
+
 # Creation du tableau 3 non ajuste avec medianes et IQR
 table3unadjusted <- df_HartmannCoelio %>%
   tbl_summary(
@@ -281,7 +283,7 @@ table3unadjusted_gt <- as_gt(table3unadjusted)
 # Enregistrer le tableau au format Word
 gtsave(table3unadjusted_gt , file = "table3unadjusted.docx")
 
-
+## %% ---- Tableau 4 : résultats post-opératoires tardifs ----
 
 # Creation du tableau 4 non ajuste avec medianes et IQR
 table4unadjusted <- df_HartmannCoelio %>%

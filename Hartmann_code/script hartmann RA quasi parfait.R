@@ -9,7 +9,7 @@ install.packages(c(
   "officer", "flextable", "gt", "mice", "googlesheets4", 
   "RItools", "epiR", "tableone", "cobalt", "broom", "forcats", "dlstats", "pkgsearch", "pROC", "stats", "ResourceSelection", "forestplot"))
 
-# %% --- Chargement des librairies --- 
+## %% --- Chargement des librairies -----
 library(forcats)
 library(cardx)
 library(tidyverse)
@@ -22,7 +22,6 @@ library(lubridate)
 library(ggpubr)
 library(survival)
 library(survminer)
-library(summarytools)
 library(MatchIt)
 library(optmatch)
 library(flextable)
@@ -177,6 +176,7 @@ cols_to_include_in_table4 <- c(
 # et uniquement ceux operes en urgence (I_urgence == 1)
 df_HartmannCoelio <- df[!is.na(df$I_geste_comparaison_1HartmannCoelio) & df$I_urgence == 1, ]
 
+## %% --- tableau 1 ------
 
 #formule tableau1
 table1unadjusted <- df_HartmannCoelio %>%
@@ -214,7 +214,7 @@ table1unadjusted <- df_temp %>%
     by = I_geste_comparaison_1HartmannCoelio,
     percent = "column",
     statistic = list(
-      all_categorical() ~ "{n} ({p}%)",
+      all_categorical() ~ "{n}",
       all_continuous() ~ "{median} ({p25} - {p75})"
     )
   ) %>%
@@ -558,7 +558,7 @@ print(p)
 
 
 
-##************Appariement selon score de propension*****
+## %% ---- Appariement selon score de propension ----
 #analyse uni- puis multivariée pour identifier facteurs importants
 
 #creer un nouveau df pour appariemment selon score de propension
@@ -611,6 +611,8 @@ dfps_HartmannCoelio_imputed[cols_to_impute] <- completed_data
 
 dfps_HartmannCoelio_imputed <- dfps_HartmannCoelio_imputed %>%
   mutate(Age_cat = cut(Age, breaks = c(-Inf, 50, 60, 70, Inf), labels = c("<50", "50-60", "60-70", ">70")))
+
+
 
 m.out <- matchit(
   I_geste_comparaison_1HartmannCoelio ~ Age_cat + Sexe_Male + BMI + A_ASA_sup2 + A_tabac + A_immunosuppression + I_arret_ATC + A_ATCD_laparo_mediane + I_scoreHinchey_4,

@@ -749,7 +749,7 @@ table1adjusted <- m.final %>%
     ),
     statistic = list(
       all_categorical() ~ "{n} ({p}%)",
-      all_continuous() ~ "{median} ({p25} - {p75})"
+      all_continuous() ~ "{median} [{p25}, {p75}]"
     )
   ) %>%
   #add_difference() %>% 
@@ -778,20 +778,25 @@ table2adjusted <- m.final %>%
   tbl_summary(
     include = all_of(cols_to_include_in_table2),
     missing = "ifany",
-    by = I_geste_comparaison_1HartmannCoelio,  # Comparaison entre groupes
+    by = I_geste_comparaison_1HartmannCoelio,
     percent = "column",
     statistic = list(
       all_categorical() ~ "{n} ({p}%)",
-      all_continuous() ~ "{median} ({p25} - {p75})"
+      all_continuous() ~ "{median} [{p25}, {p75}]"
     )
   ) %>%
   add_p(
     test = list(
-      all_continuous() ~ "paired.wilcox.test",  # Test de Wilcoxon pour les donnees continues
-      all_categorical() ~ "mcnemar.test"  # Test de McNemar pour les donnees categoriques
+      all_continuous() ~ "paired.wilcox.test",
+      all_categorical() ~ "mcnemar.test"
     ),
-    group = Pair_ID  # Utilisation de l'ID de paire
-  )
+    group = Pair_ID
+  ) 
+
+# Export en Word (.docx)
+table2adjusted %>%
+  as_flex_table() %>%
+  flextable::save_as_docx(path = "table2_adjusted.docx")
 
 # Affichage du tableau final
 table2adjusted
@@ -817,7 +822,7 @@ table3adjusted <- m.final %>%
     percent = "column",
     statistic = list(
       all_categorical() ~ "{n} ({p}%)",
-      all_continuous() ~ "{median} ({p25} - {p75})"
+      all_continuous() ~ "{median} [{p25}, {p75}]"
     )
   ) %>%
   add_p(
@@ -830,6 +835,13 @@ table3adjusted <- m.final %>%
 
 # Affichage du tableau final
 table3adjusted
+
+# export en Word (.docx)
+table3adjusted %>%
+  as_flex_table() %>%
+  flextable::save_as_docx(path = "table3_adjusted.docx")
+
+
 
 
 # Convertir le tableau en objet gt

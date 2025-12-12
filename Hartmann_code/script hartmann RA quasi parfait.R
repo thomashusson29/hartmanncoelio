@@ -675,6 +675,18 @@ love.plot(bal.tab(m.out),
           stars = "raw",
           abs = TRUE) # Afficher les valeurs absolues des differences moyennes standardisees
 
+# changer les couleurs du love plot pour mettre #81a1c1 et #d08770
+love.plot(bal.tab(m.out),
+          var.order = "alphabetical", # Ordre des variables alphabetique (peut être "adjusted" ou "unadjusted")
+          threshold = 0.1, # Ajouter une ligne de seuil à 0.1
+          stat = "mean.diffs", # Type de statistique à afficher (differences moyennes standardisees)
+          grid = TRUE,
+          line = TRUE,
+          stars = "raw",
+          abs = TRUE,
+          colors = c("#d08770", "#81a1c1")) # Afficher les valeurs absolues des differences moyennes standardisees
+
+
 bal.tab(m.out, m.threshold = 0.1, un = TRUE)
 
 #******************2ème test du score de propension*****************#
@@ -952,10 +964,10 @@ p <- ggsurvplot(
   break.time.by = 100,
   conf.int = TRUE,
   xlim = c(0, 730),
-  xlab = "Temps (jours)",
-  ylab = "Taux de retablissement de la continuite (%)",
-  legend.title = "Technique chirurgicale",
-  legend.labs = c("Hartmann", "RA Protegee"),
+  xlab = "Follow-up (days)",
+  ylab = "Stoma free (%)",
+  legend.title = "Surgical technique",
+  legend.labs = c("LHP", "OPA"),
   fun = function(x) 100 * (1 - x)
 )
 
@@ -993,10 +1005,6 @@ p$plot <- p$plot +
             aes(x = 730, y = pourcentage_fermeture,
                 label = paste0(round(pourcentage_fermeture, 1), "%")),
             vjust = -0.5, size = 5, fontface = "bold", color = "black") +
-  
-  annotate("text", x = 600, y = 10,
-           label = paste0("Log-rank p = ", p_value),
-           size = 5, hjust = 0)
 
 # Affichage
 print(p)

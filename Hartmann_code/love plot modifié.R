@@ -30,12 +30,90 @@ loveplot <- love.plot(bal_data_modified,
           line = TRUE,                     # Afficher les lignes entre les points
           stars = "raw",                   # Afficher les astérisques pour les variables binaires
           abs = TRUE,                      # Afficher les valeurs absolues des différences moyennes standardisées
-          title = "Love Plot - Balance des covariables",
-          sample.names = c("Non apparié", "Apparié"),
-          colors = c("#db1d88", "#4b6bd6"))# Couleurs pour les groupes 
+          title = "Love Plot - Covariable Balance",
+          sample.names = c("Unmatched", "Matched"),
+          colors = c("#d08770", "#81a1c1"))# Couleurs pour les groupes 
 +theme(legend.text = element_text(size = 16))
 
 loveplot
+
+# changer les labels (renommer en anglais)
+# Renommer toutes les variables en français
+new_names[new_names == "Age_cat_<50"] <- "Age"
+new_names[new_names == "Sexe_Male"] <- "Sex"
+new_names[new_names == "BMI"] <- "BMI"
+new_names[new_names == "A_ASA_sup2"] <- "ASA = 3"
+new_names[new_names == "A_tabac"] <- "Smoking"
+new_names[new_names == "A_immunosuppression"] <- "Immunodepression"
+new_names[new_names == "I_arret_ATC"] <- "Curative anticoagulantion"
+new_names[new_names == "A_ATCD_laparo_mediane"] <- "Laparotomy history"
+new_names[new_names == "I_scoreHinchey_4"] <- "Hinchey stage"
+
+# refaire le loveplot avec nouveau noms
+
+
+# Love plot avec renommage propre des covariables
+# Nécessite cobalt et MatchIt
+library(cobalt)
+library(MatchIt)
+
+# Extraire la balance depuis l'objet MatchIt
+bal_data <- bal.tab(m.out, un = TRUE)
+
+# Supprimer les catégories d'âge inutiles
+rows_to_keep <- !rownames(bal_data$Balance) %in% c(
+  "Age_cat_50-60",
+  "Age_cat_60-70",
+  "Age_cat_>70"
+)
+
+bal_data$Balance <- bal_data$Balance[rows_to_keep, ]
+
+# Renommer Age_cat_<50 en Age
+rownames(bal_data$Balance)[rownames(bal_data$Balance) == "Age_cat_<50"] <- "Age"
+
+# Dictionnaire de renommage (anciens noms -> nouveaux labels)
+var_labels <- c(
+  "Age"                     = "Age",
+  "Sexe_Male"               = "Sex",
+  "BMI"                     = "BMI",
+  "A_ASA_sup2"              = "ASA = 3",
+  "A_tabac"                 = "Smoking",
+  "A_immunosuppression"     = "Immunodepression",
+  "I_arret_ATC"             = "Curative anticoagulation",
+  "A_ATCD_laparo_mediane"   = "Previous laparotomy",
+  "I_scoreHinchey_4"        = "Hinchey stage IV"
+)
+
+# Créer le love plot avec labels personnalisés
+loveplot <- love.plot(
+  bal_data,
+  var.order    = "alphabetical",
+  threshold    = 0.1,
+  stat         = "mean.diffs",
+  grid         = TRUE,
+  line         = TRUE,
+  stars        = NULL,
+  abs          = TRUE,
+  sample.names = c("Unmatched", "Matched"),
+  colors       = c("#B48EAD", "#A3BE8C"),
+  var.names    = var_labels,
+  title        = "Love Plot – Covariate Balance"
+) +
+  theme(
+    legend.text = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    axis.text.x = element_text(size = 12)
+  )
+
+# Affichage
+loveplot
+
+# export en svg
+ggsave("figures/loveplot_modified.svg", plot = loveplot, width = 10, height = 6, dpi = 1000)
+
+
+
 # Note: Ce script suppose que l'objet m.out (résultat de matchit) est déjà présent dans votre environnement R
 
 

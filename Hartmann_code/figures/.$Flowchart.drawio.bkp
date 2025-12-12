@@ -1,0 +1,117 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="8UKP3n8Fygtg4PNOMHgh">
+    <mxGraphModel dx="1131" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3Txh347CIcrGN9yCxnOS-32" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="3" y="60" width="821" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-1" value="&lt;font face=&quot;Times New Roman&quot;&gt;1521 patients in database&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-32">
+          <mxGeometry x="306" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-4" value="" style="endArrow=block;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endFill=1;endSize=4;" edge="1" parent="3Txh347CIcrGN9yCxnOS-32" source="3Txh347CIcrGN9yCxnOS-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="516" y="120" as="sourcePoint" />
+            <mxPoint x="406" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-5" value="&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;284 patients analyzed&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-32">
+          <mxGeometry x="291" y="100" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-9" value="" style="endArrow=block;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endFill=1;endSize=4;" edge="1" parent="3Txh347CIcrGN9yCxnOS-32" source="3Txh347CIcrGN9yCxnOS-1" target="3Txh347CIcrGN9yCxnOS-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="366" y="190" as="sourcePoint" />
+            <mxPoint x="416" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="406" y="65" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-12" value="" style="endArrow=block;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endFill=1;endSize=4;" edge="1" parent="3Txh347CIcrGN9yCxnOS-32" source="3Txh347CIcrGN9yCxnOS-5" target="3Txh347CIcrGN9yCxnOS-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="406" y="40" as="sourcePoint" />
+            <mxPoint x="406" y="110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="406" y="150" />
+              <mxPoint x="239" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-13" value="" style="endArrow=block;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endFill=1;endSize=4;" edge="1" parent="3Txh347CIcrGN9yCxnOS-32" source="3Txh347CIcrGN9yCxnOS-5" target="3Txh347CIcrGN9yCxnOS-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="558" y="150" as="sourcePoint" />
+            <mxPoint x="396" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="406" y="150" />
+              <mxPoint x="573" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-26" value="&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 11px;&quot;&gt;Propensity score Matching (ratio 1:1)&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=none;fontStyle=2" vertex="1" parent="3Txh347CIcrGN9yCxnOS-32">
+          <mxGeometry x="106" y="203" width="600" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-31" value="" style="group" vertex="1" connectable="0" parent="3Txh347CIcrGN9yCxnOS-32">
+          <mxGeometry y="40" width="821" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-3" value="&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;1230 patients excluded&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;-&amp;nbsp; &amp;nbsp;226 for ASA score 4 or missing data&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;-&amp;nbsp; &amp;nbsp;1004 for other procedures than LHP or OPA&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="506" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-10" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Laparoscopic Hartmann group&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;n = 138 patients&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;flipH=1;flipV=1;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="106" y="120" width="266" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-11" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Open Primary Anastomosis with Ileostomy group&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;n = 146 patients&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;flipH=1;flipV=1;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="440" y="120" width="266" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-20" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Laparoscopic Hartmann group&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;n = 101 patients matched&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="106" y="230" width="266" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-21" value="&lt;b style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Open Primary Anastomosis with Ileostomy group&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font face=&quot;Times New Roman&quot;&gt;n = 101 patients matched&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="440" y="230" width="266" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-22" value="&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 10px;&quot;&gt;Raw dataset&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="16" y="125" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-23" value="&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 10px;&quot;&gt;Matched dataset&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="16" y="230" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-27" value="&lt;font face=&quot;Times New Roman&quot;&gt;45 patients excluded because not matched or missing datas in covariates for propensity matching&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry x="628" y="174.5" width="193" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-29" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;37 patients excluded because not matched or missing datas in covariates for propensity matching&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" vertex="1" parent="3Txh347CIcrGN9yCxnOS-31">
+          <mxGeometry y="174.5" width="193" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-24" value="" style="endArrow=block;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endFill=1;endSize=4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="3Txh347CIcrGN9yCxnOS-31" source="3Txh347CIcrGN9yCxnOS-10" target="3Txh347CIcrGN9yCxnOS-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="406" y="10" as="sourcePoint" />
+            <mxPoint x="406" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-25" value="" style="endArrow=block;html=1;rounded=0;endFill=1;endSize=4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="3Txh347CIcrGN9yCxnOS-31" source="3Txh347CIcrGN9yCxnOS-11" target="3Txh347CIcrGN9yCxnOS-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="246" y="180" as="sourcePoint" />
+            <mxPoint x="246" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-28" value="" style="endArrow=block;html=1;rounded=0;endFill=1;endSize=4;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="3Txh347CIcrGN9yCxnOS-31" source="3Txh347CIcrGN9yCxnOS-11" target="3Txh347CIcrGN9yCxnOS-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="576" y="170" as="sourcePoint" />
+            <mxPoint x="576" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="573" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Txh347CIcrGN9yCxnOS-30" value="" style="endArrow=block;html=1;rounded=0;endFill=1;endSize=4;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="3Txh347CIcrGN9yCxnOS-31" source="3Txh347CIcrGN9yCxnOS-10" target="3Txh347CIcrGN9yCxnOS-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="200" as="sourcePoint" />
+            <mxPoint x="655" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="239" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

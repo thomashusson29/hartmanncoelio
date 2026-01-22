@@ -88,3 +88,5 @@
 .RData
 # Ignorés automatiquement (>20 Mo)
 .RData
+# Fichiers ignorés automatiquement (>20 Mo)
+.RData
